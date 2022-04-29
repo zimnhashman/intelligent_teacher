@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 
 
-class EnglishQuestionAnswer extends StatefulWidget {
+class EnglishQuestionAnswerOne extends StatefulWidget {
 
 
 
   @override
-  _EnglishQuestionAnswerState createState() => _EnglishQuestionAnswerState();
+  _EnglishQuestionAnswerOneState createState() => _EnglishQuestionAnswerOneState();
 }
 
-class _EnglishQuestionAnswerState extends State<EnglishQuestionAnswer> {
+class _EnglishQuestionAnswerOneState extends State<EnglishQuestionAnswerOne> {
   @override
   Widget build(BuildContext context) {
     GlobalKey<FormState> _questionKey = GlobalKey();
@@ -30,7 +30,18 @@ class _EnglishQuestionAnswerState extends State<EnglishQuestionAnswer> {
                 'Read The Story', style: TextStyle(
                 fontSize: 14.0,
               ),
+
               ),
+
+              Text(
+                'My Homstead', style: TextStyle(
+                fontSize: 15.0,
+              ),
+
+              ),
+
+
+
               Text(
                 "Hello again! This is my home. We grow some vegetables and we keep some animals."
                     " I’ve got two more new friends from the sessions. Their names are Precious and Zendaya. Precious is 12 and Zendaya is 13. It is difficult for Zendaya to learn new things,"
@@ -41,15 +52,55 @@ class _EnglishQuestionAnswerState extends State<EnglishQuestionAnswer> {
               ),
               Divider(),
 
-              Column(
-                children: [
-                  Text('How old  is Precious?'),
-                  Divider(),
-                  TextFormField(),
-                  Divider(thickness: 10.0,)
+              SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Text('How old  is Precious?'),
+                    Divider(),
+                    TextFormField(
 
-                ],
+                    ),
+                    Divider(thickness: 10.0,),
 
+                    Text('How old  is Zendaya?'),
+                    Divider(),
+                    TextFormField(
+
+                    ),
+                    Divider(thickness: 10.0,),
+
+                    Text('How many chickens does Vimbai have?'),
+                    Divider(),
+                    TextFormField(
+
+                    ),
+                    Divider(thickness: 10.0,),
+
+                    Text('How many goats does Vimbai have?'),
+                    Divider(),
+                    TextFormField(
+
+                    ),
+                    Divider(thickness: 10.0,),
+
+                    Text('How many eggs does Zendaya find?'),
+                    Divider(),
+                    TextFormField(
+
+                    ),
+                    Divider(thickness: 10.0,),
+
+                    Text('How many eggs do all the girls have?'),
+                    Divider(),
+                    TextFormField(
+
+                    ),
+                    Divider(thickness: 10.0,),
+
+
+                  ],
+
+                ),
               ),
 
 
