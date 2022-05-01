@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/get_navigation.dart';
-import 'package:intelligent_teacher/ict/ictQuestionAndAnswer.dart';
+import 'package:intelligent_teacher/userLearner/ict/ictQuestionAndAnswer.dart';
 
 
-class Categorization extends StatelessWidget {
+class Categories extends StatelessWidget {
 
 
   @override
@@ -14,7 +14,7 @@ class Categorization extends StatelessWidget {
         children: [
           Column(
             children: [
-              Image.asset('asset/images/english.jpg'),
+              Image.asset('asset/images/userLearner.english.jpg'),
               Text('English', style: TextStyle(
                 fontSize: 20.0
               ),),
@@ -35,7 +35,7 @@ class Categorization extends StatelessWidget {
             onTap: () => Get.to(QuestionAnswer()) ,
             child: Column(
               children: [
-                Image.asset('asset/images/ict.jpg',),
+                Image.asset('asset/images/userLearner.ict.jpg',),
                 Text('ICT', style: TextStyle(
                     fontSize: 20.0
                 ),),
