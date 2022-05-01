@@ -1,28 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_navigation/get_navigation.dart';
-import 'package:intelligent_teacher/userLearner/english/englishCompOneResult.dart';
+import 'package:intelligent_teacher/userLearner/english/englishCompTwoResult.dart';
+
+class EnglishQuestionAnswerTwo extends StatefulWidget {
 
 
-class EnglishQuestionAnswerOne extends StatefulWidget {
 
 
 
   @override
-  _EnglishQuestionAnswerOneState createState() => _EnglishQuestionAnswerOneState();
+  _EnglishQuestionAnswerTwoState createState() =>
+      _EnglishQuestionAnswerTwoState();
 }
 
-class _EnglishQuestionAnswerOneState extends State<EnglishQuestionAnswerOne> {
+class _EnglishQuestionAnswerTwoState extends State<EnglishQuestionAnswerTwo> {
   @override
   Widget build(BuildContext context) {
-
     TextEditingController _question1Controller = new TextEditingController();
     TextEditingController _question2Controller = new TextEditingController();
     TextEditingController _question3Controller = new TextEditingController();
     TextEditingController _question4Controller = new TextEditingController();
     TextEditingController _question5Controller = new TextEditingController();
     TextEditingController _question6Controller = new TextEditingController();
-
     return Scaffold(
       appBar: AppBar(
         title: Text('Chapter Quiz'),
@@ -33,38 +32,49 @@ class _EnglishQuestionAnswerOneState extends State<EnglishQuestionAnswerOne> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Text(
-                  'Comprehension 1', style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+                'Comprehension 2',
+                style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
               ),
               Text(
-                'Read The Story', style: TextStyle(
-                fontSize: 14.0,
-              ),
-
+                'Read The Story',
+                style: TextStyle(
+                  fontSize: 14.0,
+                ),
               ),
 
               Text(
-                'My Homstead', style: TextStyle(
-                fontSize: 15.0,
-              ),
+                  "Do you remember me? I’m Chiedza. I go to MOPSE-SAGE sessions with Vimbai. "
+                  "I live with my grandmother. I have to help her at home. I also have to look after Tobe,"
+                  " my daughter, and I do most of the work in the house. There are always "
+                  "lots of things to do. I also need time for the MOPSE-SAGE sessions and my "
+                  "homework. It’s difficult to remember everything.My friend Vimbai said, “You should make a list.”"
+                  "“A list?” I said. “Are you crazy? I don’t need to write a list.”“Yes, you do,” she said. "
+                  "“It always helps me to remember things.”Then she helped me to write a list of things to do for"
+                  " today and tomorrow.I wanted to buy a chicken.“How do you spell ‘chicken’?” I asked.“I don’t know,” "
+                  "said Vimbai. “Draw a little picture.”I drew a picture."
+                  "“Your chicken looks like a turkey,” said Vimbai. “You mustn’t buy a turkey tomorrow!”"),
 
-              ),
-
-
-
-              Text(
-                "Hello again! This is my home. We grow some vegetables and we keep some animals."
-                    " I’ve got two more new friends from the sessions. Their names are Precious and Zendaya. Precious is 12 and Zendaya is 13. It is difficult for Zendaya to learn new things,"
-                    " but she always smiles and she always says nice things. She loves animals.“How many animals have you got, Vimbai?” Zendaya asks.“We’ve got nine chickens and two goats,” "
-                    "I say.“Girls, go and look for eggs,” says my mother.We go outside and look for eggs.“Here’s an egg!” says Precious, but then she drops it and the egg breaks.“Oh, no!” she says. "
-                    "“I’m very sorry!”“Don’t worry,” I say. “There are lots more.”Precious finds one more egg, I find two eggs and Zandaya finds four eggs. “Wow, Zendaya!” says Precious."
-                    " “You’re very good at finding eggs!”“I want to be a farmer!” says Zendaya, with a big smile. Match the questions with the numbers."
-              ),
               Divider(),
 
+              //todo: Needs Boolean on answer fields using radio buttons using yes or no
               SingleChildScrollView(
                 child: Column(
                   children: [
-                    Text('1. How old  is Precious?'),
+                    Text(
+                      'Answer with YES or NO!',
+                      style: TextStyle(
+                        fontSize: 22.0,
+                      ),
+                    ),
+                    Divider(),
+                    Text(
+                      'Which of these things does Chiedza have to do?',
+                      style: TextStyle(
+                        fontSize: 13.0,
+                      ),
+                    ),
+                    Divider(),
+                    Text('1. Help Her grandmother'),
                     Divider(),
                     TextField(
                       keyboardType: TextInputType.text,
@@ -78,10 +88,11 @@ class _EnglishQuestionAnswerOneState extends State<EnglishQuestionAnswerOne> {
                         hintText: 'Enter Comprehension Passage Here',
                         hintStyle: TextStyle(color: Colors.grey),
 
-                    ),),
-                    Divider(thickness: 10.0,),
-
-                    Text('2. How old  is Zendaya?'),
+                      ),),
+                    Divider(
+                      thickness: 10.0,
+                    ),
+                    Text('2. Look after her son'),
                     Divider(),
                     TextField(
                       keyboardType: TextInputType.text,
@@ -96,9 +107,10 @@ class _EnglishQuestionAnswerOneState extends State<EnglishQuestionAnswerOne> {
                         hintStyle: TextStyle(color: Colors.grey),
 
                       ),),
-                    Divider(thickness: 10.0,),
-
-                    Text('3. How many chickens does Vimbai have?'),
+                    Divider(
+                      thickness: 10.0,
+                    ),
+                    Text('3. Do most of the work in the house'),
                     Divider(),
                     TextField(
                       keyboardType: TextInputType.text,
@@ -113,9 +125,10 @@ class _EnglishQuestionAnswerOneState extends State<EnglishQuestionAnswerOne> {
                         hintStyle: TextStyle(color: Colors.grey),
 
                       ),),
-                    Divider(thickness: 10.0,),
-
-                    Text('4. How many goats does Vimbai have?'),
+                    Divider(
+                      thickness: 10.0,
+                    ),
+                    Text('4. Do her homework'),
                     Divider(),
                     TextField(
                       keyboardType: TextInputType.text,
@@ -130,9 +143,10 @@ class _EnglishQuestionAnswerOneState extends State<EnglishQuestionAnswerOne> {
                         hintStyle: TextStyle(color: Colors.grey),
 
                       ),),
-                    Divider(thickness: 10.0,),
-
-                    Text('5. How many eggs does Zendaya find?'),
+                    Divider(
+                      thickness: 10.0,
+                    ),
+                    Text('5. Help Vimbai to cook a chicken'),
                     Divider(),
                     TextField(
                       keyboardType: TextInputType.text,
@@ -147,9 +161,10 @@ class _EnglishQuestionAnswerOneState extends State<EnglishQuestionAnswerOne> {
                         hintStyle: TextStyle(color: Colors.grey),
 
                       ),),
-                    Divider(thickness: 10.0,),
-
-                    Text('6. How many eggs do all the girls have?'),
+                    Divider(
+                      thickness: 10.0,
+                    ),
+                    Text('6. Buy a turkey tomorrow'),
                     Divider(),
                     TextField(
                       keyboardType: TextInputType.text,
@@ -164,35 +179,31 @@ class _EnglishQuestionAnswerOneState extends State<EnglishQuestionAnswerOne> {
                         hintStyle: TextStyle(color: Colors.grey),
 
                       ),),
-                    Divider(thickness: 10.0,),
+                    Divider(
+                      thickness: 10.0,
+                    ),
 
+                    ElevatedButton(onPressed: () {
+                      var _question1Answer = _question1Controller.text;
+                      var _question2Answer = _question2Controller.text;
+                      var _question3Answer= _question3Controller.text;
+                      var _question4Answer = _question4Controller.text;
+                      var _question5Answer = _question5Controller.text;
+                      var _question6Answer = _question6Controller.text;
+                      Get.to(EnglishQuestionAnswerTwoResult(question1Answer: _question1Answer,
+                        question2Answer: _question2Answer, question3Answer: _question3Answer,
+                        question4Answer: _question4Answer, question5Answer: _question5Answer,
+                        question6Answer: _question6Answer,));
 
-                      ElevatedButton(onPressed: () {
-                        var _question1Answer = _question1Controller.text;
-                        var _question2Answer = _question2Controller.text;
-                        var _question3Answer= _question3Controller.text;
-                        var _question4Answer = _question4Controller.text;
-                        var _question5Answer = _question5Controller.text;
-                        var _question6Answer = _question6Controller.text;
-                        Get.to(EnglishQuestionAnswerOneResult(question1Answer: _question1Answer,
-                          question2Answer: _question2Answer, question3Answer: _question3Answer,
-                          question4Answer: _question4Answer, question5Answer: _question5Answer,
-                          question6Answer: _question6Answer,));
-
-                      }, child: Text('SUBMIT'))
-
-
+                    }, child: Text('SUBMIT'))
                   ],
-
                 ),
               ),
-
-
             ],
           ),
         ),
       ),
     );
+    ;
   }
 }
-

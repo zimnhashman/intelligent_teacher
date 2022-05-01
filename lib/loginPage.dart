@@ -13,10 +13,10 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   bool isVisible = false;
-  final controller = Get.put(Controller());
-  //final passwordController = Get.put(Controller());
-  var username;
-  var password;
+  TextEditingController _usernameController = new TextEditingController();
+  TextEditingController _passwordController = new TextEditingController();
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -73,8 +73,7 @@ class _LoginPageState extends State<LoginPage> {
                         child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 8),
                           child: TextField(
-                            controller: controller.textController,
-
+                            controller: _usernameController,
                             style: const TextStyle(color: Colors.white),
                             decoration: InputDecoration(
                                 labelText: 'username',
@@ -102,6 +101,7 @@ class _LoginPageState extends State<LoginPage> {
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 8),
                         child: TextField(
+                          controller: _passwordController,
                           style: const TextStyle(color: Colors.white),
                           obscureText: isVisible,
                           decoration: InputDecoration(
@@ -132,10 +132,10 @@ class _LoginPageState extends State<LoginPage> {
                         InkWell(
                           onTap: () {
                             // ignore: unrelated_type_equality_checks
-                            if (controller.textController == 'admin') {
+                            if ( _usernameController == 'admin') {
                                   Get.to(AdminDashboard());
                             // ignore: unrelated_type_equality_checks
-                            } else if (controller.textController == 'test') {
+                            } else if (_passwordController == 'test') {
                               Get.to(Categories(), arguments: []);
                             }
                           },

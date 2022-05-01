@@ -11,12 +11,7 @@ class AdminEnglishAdd extends StatefulWidget {
 
 class _AdminEnglishAddState extends State<AdminEnglishAdd> {
   TextEditingController _comprehensionPassageController = new TextEditingController();
-
   TextEditingController _comprehensionTitleController = new TextEditingController();
-
-  var comprehensionPassage;
-
-  var comprehensionTitle;
 
   var answerType;
 
@@ -29,9 +24,7 @@ class _AdminEnglishAddState extends State<AdminEnglishAdd> {
        children: <Widget>[
          Text('Add Comprehension Title', style: TextStyle(fontSize: 22),),
          TextField(
-           onChanged: (value) {
-             value = comprehensionTitle;
-           },
+           keyboardType: TextInputType.text,
            controller: _comprehensionTitleController,
            textAlign: TextAlign.center,
            decoration: InputDecoration(
@@ -46,10 +39,8 @@ class _AdminEnglishAddState extends State<AdminEnglishAdd> {
 
          Text('Add Comprehension Passage', style: TextStyle(fontSize: 22),),
          TextField(
+           keyboardType: TextInputType.text,
            controller: _comprehensionPassageController,
-           onChanged: (value1) {
-             value1 = comprehensionPassage;
-           },
            textAlign: TextAlign.center,
            decoration: InputDecoration(
              border: OutlineInputBorder(
@@ -63,7 +54,12 @@ class _AdminEnglishAddState extends State<AdminEnglishAdd> {
         SizedBox(height: 30.0),
 
 
-        ElevatedButton(onPressed: () => print(comprehensionPassage), child: Text('Next'))
+        ElevatedButton(onPressed: () {
+          var _comprehensionPassage = _comprehensionPassageController.text;
+          var _comprehensionTitle =  _comprehensionTitleController.text;
+          Get.to(EnglishQuestions(comprehensionPassage: _comprehensionPassage, comprehensionTitle: _comprehensionTitle));
+
+        }, child: Text('Next'))
        ],
       ),
 
@@ -73,25 +69,39 @@ class _AdminEnglishAddState extends State<AdminEnglishAdd> {
 
 
 class EnglishQuestions extends StatelessWidget {
-  EnglishQuestions({required this.answerType, required this.comprehensionPassage, required this.comprehensionTitle});
+  EnglishQuestions({required this.comprehensionPassage, required this.comprehensionTitle});
 
 
   String comprehensionPassage;
   String comprehensionTitle;
-  bool answerType;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Add Question Type'),
+      ),
       body: Column(
         children: [
          Text(comprehensionTitle),
+          SizedBox(height: 20.0,),
           Divider(),
           Text(comprehensionPassage),
+          SizedBox(height: 20.0,),
+          Divider(),
+          Text('Questions Type',style: TextStyle(
+            fontSize: 22.0,
+            fontWeight: FontWeight.bold
+          ),),
+          SizedBox(height: 20.0,),
           Container(
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ElevatedButton(onPressed: () => {}, child: Text('Written'),),
+                SizedBox(width: 20.0,),
                 ElevatedButton(onPressed: () => {}, child: Text('Multiple Choice')),
+                SizedBox(width: 20.0,),
                 ElevatedButton(onPressed: () => {}, child: Text('Yes Or No')),
 
               ],
