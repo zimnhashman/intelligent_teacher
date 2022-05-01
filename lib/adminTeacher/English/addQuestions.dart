@@ -72,37 +72,37 @@ class _AdminEnglishAddState extends State<AdminEnglishAdd> {
 }
 
 
-// class EnglishQuestions extends StatelessWidget {
-//   EnglishQuestions({required this.answerType, required this.comprehensionPassage, required this.comprehensionTitle});
-//
-//
-//   String comprehensionPassage;
-//   String comprehensionTitle;
-//   bool answerType;
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: Column(
-//         children: [
-//          Text(comprehensionTitle),
-//           Divider(),
-//           Text(comprehensionPassage),
-//           Container(
-//             child: Row(
-//               children: [
-//                 ElevatedButton(onPressed: () => {}, child: Text('Written'),),
-//                 ElevatedButton(onPressed: () => {}, child: Text('Multiple Choice')),
-//                 ElevatedButton(onPressed: () => {}, child: Text('Yes Or No')),
-//
-//               ],
-//             ),
-//           )
-//         ],
-//       ),
-//     );
-//   }
-//
-// }
+class EnglishQuestions extends StatelessWidget {
+  EnglishQuestions({required this.answerType, required this.comprehensionPassage, required this.comprehensionTitle});
+
+
+  String comprehensionPassage;
+  String comprehensionTitle;
+  bool answerType;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Column(
+        children: [
+         Text(comprehensionTitle),
+          Divider(),
+          Text(comprehensionPassage),
+          Container(
+            child: Row(
+              children: [
+                ElevatedButton(onPressed: () => {}, child: Text('Written'),),
+                ElevatedButton(onPressed: () => {}, child: Text('Multiple Choice')),
+                ElevatedButton(onPressed: () => {}, child: Text('Yes Or No')),
+
+              ],
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
+}
 
 class ModelLogic {
 
