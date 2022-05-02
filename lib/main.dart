@@ -5,8 +5,6 @@ import 'package:intelligent_teacher/userLearner/categoryPage.dart';
 import 'package:intelligent_teacher/userLearner/english/englishComprehensionOne.dart';
 import 'package:intelligent_teacher/loginPage.dart';
 import 'package:intelligent_teacher/userLearner/ict/ictQuestionAndAnswer.dart';
-
-
 import 'adminTeacher/English/addQuestions.dart';
 
 void main() {
