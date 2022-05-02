@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:intelligent_teacher/adminTeacher/English/addComprehension3.dart';
 import 'package:intelligent_teacher/adminTeacher/adminDrawer.dart';
+
+import '../addComprehension4.dart';
 
 
 class AdminEnglishAdd extends StatefulWidget {
@@ -68,13 +71,18 @@ class _AdminEnglishAddState extends State<AdminEnglishAdd> {
 }
 
 
-class EnglishQuestions extends StatelessWidget {
+class EnglishQuestions extends StatefulWidget {
   EnglishQuestions({required this.comprehensionPassage, required this.comprehensionTitle});
 
 
   String comprehensionPassage;
   String comprehensionTitle;
 
+  @override
+  _EnglishQuestionsState createState() => _EnglishQuestionsState();
+}
+
+class _EnglishQuestionsState extends State<EnglishQuestions> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -83,10 +91,10 @@ class EnglishQuestions extends StatelessWidget {
       ),
       body: Column(
         children: [
-         Text(comprehensionTitle),
+         Text(widget.comprehensionTitle),
           SizedBox(height: 20.0,),
           Divider(),
-          Text(comprehensionPassage),
+          Text(widget.comprehensionPassage),
           SizedBox(height: 20.0,),
           Divider(),
           Text('Questions Type',style: TextStyle(
@@ -98,11 +106,29 @@ class EnglishQuestions extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ElevatedButton(onPressed: () => {}, child: Text('Written'),),
+                ElevatedButton(onPressed: () => {
+                  if (widget.comprehensionTitle.contains('Chiedza')) {
+                    Get.to(AddComprehension3())
+                  } else if (widget.comprehensionTitle.contains('Vimbai')) {
+                    Get.to(AddComprehension4())
+                  } else {
+                    Get.to(AdminEnglishAdd())
+                  }
+                }, child: Text('Written'),),
+
+
                 SizedBox(width: 20.0,),
-                ElevatedButton(onPressed: () => {}, child: Text('Multiple Choice')),
+
+
+                ElevatedButton(onPressed: () => {
+                  Get.to(AddComprehension4())
+                }, child: Text('Multiple Choice')),
+
                 SizedBox(width: 20.0,),
-                ElevatedButton(onPressed: () => {}, child: Text('Yes Or No')),
+
+                ElevatedButton(onPressed: () => {
+                  Get.to(AddComprehension3())
+                }, child: Text('Yes Or No')),
 
               ],
             ),
@@ -111,7 +137,6 @@ class EnglishQuestions extends StatelessWidget {
       ),
     );
   }
-
 }
 
 class ModelLogic {

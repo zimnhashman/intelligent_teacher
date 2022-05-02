@@ -22,6 +22,9 @@ class _EnglishQuestionAnswerTwoState extends State<EnglishQuestionAnswerTwo> {
     TextEditingController _question4Controller = new TextEditingController();
     TextEditingController _question5Controller = new TextEditingController();
     TextEditingController _question6Controller = new TextEditingController();
+
+    int _mark = 0;
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Chapter Quiz'),
@@ -85,7 +88,7 @@ class _EnglishQuestionAnswerTwoState extends State<EnglishQuestionAnswerTwo> {
                           borderSide: const BorderSide(color: Colors.blue, width: 2.0),
                           borderRadius: BorderRadius.circular(25.0),
                         ),
-                        hintText: 'Enter Comprehension Passage Here',
+                        hintText: 'Enter Answer Here',
                         hintStyle: TextStyle(color: Colors.grey),
 
                       ),),
@@ -103,7 +106,7 @@ class _EnglishQuestionAnswerTwoState extends State<EnglishQuestionAnswerTwo> {
                           borderSide: const BorderSide(color: Colors.blue, width: 2.0),
                           borderRadius: BorderRadius.circular(25.0),
                         ),
-                        hintText: 'Enter Comprehension Passage Here',
+                        hintText: 'Enter Answer Here',
                         hintStyle: TextStyle(color: Colors.grey),
 
                       ),),
@@ -121,7 +124,7 @@ class _EnglishQuestionAnswerTwoState extends State<EnglishQuestionAnswerTwo> {
                           borderSide: const BorderSide(color: Colors.blue, width: 2.0),
                           borderRadius: BorderRadius.circular(25.0),
                         ),
-                        hintText: 'Enter Comprehension Passage Here',
+                        hintText: 'Enter Answer Here',
                         hintStyle: TextStyle(color: Colors.grey),
 
                       ),),
@@ -139,7 +142,7 @@ class _EnglishQuestionAnswerTwoState extends State<EnglishQuestionAnswerTwo> {
                           borderSide: const BorderSide(color: Colors.blue, width: 2.0),
                           borderRadius: BorderRadius.circular(25.0),
                         ),
-                        hintText: 'Enter Comprehension Passage Here',
+                        hintText: 'Enter Answer Here',
                         hintStyle: TextStyle(color: Colors.grey),
 
                       ),),
@@ -157,7 +160,7 @@ class _EnglishQuestionAnswerTwoState extends State<EnglishQuestionAnswerTwo> {
                           borderSide: const BorderSide(color: Colors.blue, width: 2.0),
                           borderRadius: BorderRadius.circular(25.0),
                         ),
-                        hintText: 'Enter Comprehension Passage Here',
+                        hintText: 'Enter Answer Here',
                         hintStyle: TextStyle(color: Colors.grey),
 
                       ),),
@@ -175,7 +178,7 @@ class _EnglishQuestionAnswerTwoState extends State<EnglishQuestionAnswerTwo> {
                           borderSide: const BorderSide(color: Colors.blue, width: 2.0),
                           borderRadius: BorderRadius.circular(25.0),
                         ),
-                        hintText: 'Enter Comprehension Passage Here',
+                        hintText: 'Enter Answer Here',
                         hintStyle: TextStyle(color: Colors.grey),
 
                       ),),
@@ -190,7 +193,13 @@ class _EnglishQuestionAnswerTwoState extends State<EnglishQuestionAnswerTwo> {
                       var _question4Answer = _question4Controller.text;
                       var _question5Answer = _question5Controller.text;
                       var _question6Answer = _question6Controller.text;
-                      Get.to(EnglishQuestionAnswerTwoResult(question1Answer: _question1Answer,
+
+
+
+
+
+
+                      Get.to(EnglishQuestionAnswerTwoResult(mark: _mark, question1Answer: _question1Answer,
                         question2Answer: _question2Answer, question3Answer: _question3Answer,
                         question4Answer: _question4Answer, question5Answer: _question5Answer,
                         question6Answer: _question6Answer,));

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class EnglishQuestionAnswerTwoResult extends StatefulWidget {
-  EnglishQuestionAnswerTwoResult({required this.question1Answer, required this.question2Answer, required this.question3Answer, required this.question4Answer, required this.question5Answer, required this.question6Answer});
+  EnglishQuestionAnswerTwoResult({required this.question1Answer, required this.question2Answer, required this.mark,
+    required this.question3Answer, required this.question4Answer, required this.question5Answer, required this.question6Answer});
 
   String question1Answer;
   String question2Answer;
@@ -9,6 +10,7 @@ class EnglishQuestionAnswerTwoResult extends StatefulWidget {
   String question4Answer;
   String question5Answer;
   String question6Answer;
+  int mark;
 
 
   @override
