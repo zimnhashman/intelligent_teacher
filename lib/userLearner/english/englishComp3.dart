@@ -229,6 +229,5 @@ class _EnglishQuestionAnswerThreeState extends State<EnglishQuestionAnswerThree>
         ),
       ),
     );
-    ;
-  }
+      }
 }

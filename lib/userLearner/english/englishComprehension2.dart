@@ -254,6 +254,6 @@ class _EnglishQuestionAnswerTwoState extends State<EnglishQuestionAnswerTwo> {
         ),
       ),
     );
-    ;
+
   }
 }
