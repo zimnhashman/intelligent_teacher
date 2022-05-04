@@ -50,10 +50,10 @@ class _EnglishQuestionAnswerTwoState extends State<EnglishQuestionAnswerTwo> {
                   "I live with my grandmother. I have to help her at home. I also have to look after Tobe,"
                   " my daughter, and I do most of the work in the house. There are always "
                   "lots of things to do. I also need time for the MOPSE-SAGE sessions and my "
-                  "homework. It’s difficult to remember everything.My friend Vimbai said, “You should make a list.”"
+                  "homework. It’s difficult to remember everything. My friend Vimbai said, “You should make a list.”"
                   "“A list?” I said. “Are you crazy? I don’t need to write a list.”“Yes, you do,” she said. "
                   "“It always helps me to remember things.”Then she helped me to write a list of things to do for"
-                  " today and tomorrow.I wanted to buy a chicken.“How do you spell ‘chicken’?” I asked.“I don’t know,” "
+                  " today and tomorrow. I wanted to buy a chicken.“How do you spell ‘chicken’?” I asked.“I don’t know,” "
                   "said Vimbai. “Draw a little picture.”I drew a picture."
                   "“Your chicken looks like a turkey,” said Vimbai. “You mustn’t buy a turkey tomorrow!”"),
 
@@ -95,6 +95,7 @@ class _EnglishQuestionAnswerTwoState extends State<EnglishQuestionAnswerTwo> {
                     Divider(
                       thickness: 10.0,
                     ),
+
                     Text('2. Look after her son'),
                     Divider(),
                     TextField(
@@ -113,6 +114,7 @@ class _EnglishQuestionAnswerTwoState extends State<EnglishQuestionAnswerTwo> {
                     Divider(
                       thickness: 10.0,
                     ),
+
                     Text('3. Do most of the work in the house'),
                     Divider(),
                     TextField(
@@ -131,6 +133,7 @@ class _EnglishQuestionAnswerTwoState extends State<EnglishQuestionAnswerTwo> {
                     Divider(
                       thickness: 10.0,
                     ),
+
                     Text('4. Do her homework'),
                     Divider(),
                     TextField(
@@ -149,6 +152,7 @@ class _EnglishQuestionAnswerTwoState extends State<EnglishQuestionAnswerTwo> {
                     Divider(
                       thickness: 10.0,
                     ),
+
                     Text('5. Help Vimbai to cook a chicken'),
                     Divider(),
                     TextField(
@@ -167,6 +171,7 @@ class _EnglishQuestionAnswerTwoState extends State<EnglishQuestionAnswerTwo> {
                     Divider(
                       thickness: 10.0,
                     ),
+
                     Text('6. Buy a turkey tomorrow'),
                     Divider(),
                     TextField(
@@ -187,15 +192,51 @@ class _EnglishQuestionAnswerTwoState extends State<EnglishQuestionAnswerTwo> {
                     ),
 
                     ElevatedButton(onPressed: () {
-                      var _question1Answer = _question1Controller.text;
-                      var _question2Answer = _question2Controller.text;
-                      var _question3Answer= _question3Controller.text;
-                      var _question4Answer = _question4Controller.text;
-                      var _question5Answer = _question5Controller.text;
-                      var _question6Answer = _question6Controller.text;
+                      var _question1Answer = _question1Controller.text.toString().toUpperCase();
+                      var _question2Answer = _question2Controller.text.toString().toUpperCase();
+                      var _question3Answer= _question3Controller.text.toString().toUpperCase();
+                      var _question4Answer = _question4Controller.text.toString().toUpperCase();
+                      var _question5Answer = _question5Controller.text.toString().toUpperCase();
+                      var _question6Answer = _question6Controller.text.toString().toUpperCase();
 
+                      //Logic to add marks if answer is correct
+                      if (_question1Answer.contains('YES')) {setState(() {
+                        _mark++;
+                      });} else {
+                        _mark = _mark;
+                      }
 
+                      if (_question2Answer.contains('NO')) {setState(() {
+                        _mark++;
+                      });} else {
+                        _mark = _mark;
+                      }
 
+                      if (_question3Answer.contains('YES')) {setState(() {
+                        _mark++;
+                      });} else {
+                        _mark = _mark;
+                      }
+
+                      if (_question4Answer.contains('YES')) {setState(() {
+                        _mark++;
+                      });} else {
+                        _mark = _mark;
+                      }
+
+                      if (_question5Answer.contains('NO')) {setState(() {
+                        _mark++;
+                      });} else {
+                        _mark = _mark;
+                      }
+
+                      if (_question6Answer.contains('YES')) {setState(() {
+                        _mark++;
+                      });} else {
+                        _mark = _mark;
+                      }
+
+                      print(_mark);
 
 
 

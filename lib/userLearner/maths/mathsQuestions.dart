@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 
 
-class ICTQuestionAnswer extends StatefulWidget {
+class MathsQuestionAnswer extends StatefulWidget {
 
 
 
   @override
-  _ICTQuestionAnswerState createState() => _ICTQuestionAnswerState();
+  _MathsQuestionAnswerState createState() => _MathsQuestionAnswerState();
 }
 
-class _ICTQuestionAnswerState extends State<ICTQuestionAnswer> {
+class _MathsQuestionAnswerState extends State<MathsQuestionAnswer> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,23 +22,17 @@ class _ICTQuestionAnswerState extends State<ICTQuestionAnswer> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Text(
-              'Whats is the brain of the computer?'
+                '10+10'
             ),
             Divider(),
             Form(
               child: TextFormField(
-                decoration: InputDecoration(
-                  labelText: "Put In the Correct Answer Here!",
-                  labelStyle: TextStyle(color: Colors.blueGrey)
-                ),
+                  decoration: InputDecoration(
+                      labelText: "Put In the Correct Answer Here!",
+                      labelStyle: TextStyle(color: Colors.blueGrey)
+                  ),
 
-                validator: (value) {
-                  if (value!.contains("CPU")) {
-                    return "Answer Is correct";
-                  } else {
-                    return null;
-                  }
-                }),
+                  ),
             ),
 
             Padding(
@@ -46,9 +40,8 @@ class _ICTQuestionAnswerState extends State<ICTQuestionAnswer> {
               child: ElevatedButton(
                 onPressed: () {
 
-
                 }, child: Text(
-                'SUBMIT'
+                  'SUBMIT'
               ),
               ),
 

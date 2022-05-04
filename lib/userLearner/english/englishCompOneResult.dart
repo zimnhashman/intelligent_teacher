@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:intelligent_teacher/userLearner/english/englishCategory.dart';
+import 'englishComprehensionOne.dart';
 
 class EnglishQuestionAnswerOneResult extends StatefulWidget {
 EnglishQuestionAnswerOneResult({required this.question1Answer, required this.question2Answer,
@@ -28,18 +30,22 @@ class _EnglishQuestionAnswerOneResultState extends State<EnglishQuestionAnswerOn
       appBar: AppBar(title: Text('Chapter Result'),),
       body: Column(
         children: <Widget>[
-        Text('${widget.mark}', style: TextStyle(fontSize: 30.0),)
+          Text((widget.mark >= 5) ? 'You Have Successfully Completed the exercise' : 'Good Try. Please Try Again', style: TextStyle(
+            fontSize: 24.0,
+            fontWeight: FontWeight.bold,
+          ),),
+        SizedBox(height: 20.0,),
+        Text(' ${widget.mark}/6', style: TextStyle(fontSize: 30.0, ),),
+          SizedBox(height: 20.0,),
+          ElevatedButton(onPressed: () {
+            (widget.mark >= 5) ? Get.to(EnglishComprehensionOneSuccess()) : Get.to(EnglishComprehensionOneFailer());
+          },
+          child: Text('Continue', ),)
         ],
     ),
     );
   }
 }
-
-
-
-
-
-
 
 
 
@@ -54,28 +60,51 @@ class EnglishComprehensionOneSuccess extends StatefulWidget {
 class _EnglishComprehensionOneSuccessState extends State<EnglishComprehensionOneSuccess> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(title: Text('Options'),),
+      body: Column(
+        children: <Widget>[
+          Text('Do you Want to Redo The Exercise Again or Try Another One'),
+          SizedBox(height: 20.0,),
+          Row(
+            children: <Widget>[
+              ElevatedButton(onPressed: () => Get.to(UserEnglishSelector()), child: Text('Try Another One')),
+              SizedBox(width: 20.0,),
+              ElevatedButton(onPressed: () => Get.to(EnglishQuestionAnswerOne()), child: Text('Redo')),
+
+            ],
+          ),
+        ],
+      ),
+    );
   }
 }
 
 
 
 
-
-
-
-
-
-class EnglishComprehensionTwoFailer extends StatefulWidget {
-  const EnglishComprehensionTwoFailer({Key? key}) : super(key: key);
+class EnglishComprehensionOneFailer extends StatefulWidget {
+  const EnglishComprehensionOneFailer({Key? key}) : super(key: key);
 
   @override
-  _EnglishComprehensionTwoFailerState createState() => _EnglishComprehensionTwoFailerState();
+  _EnglishComprehensionOneFailerState createState() => _EnglishComprehensionOneFailerState();
 }
 
-class _EnglishComprehensionTwoFailerState extends State<EnglishComprehensionTwoFailer> {
+class _EnglishComprehensionOneFailerState extends State<EnglishComprehensionOneFailer> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(),
+      body:Column(
+        children: <Widget>[
+          Text('You Tried Your Best!'),
+          SizedBox(height: 15.0,),
+          Text('Please Try the Exercise Again'),
+          ElevatedButton(onPressed: () => Get.to(EnglishQuestionAnswerOne()), child: Text('Try Again'))
+
+        ],
+      ),
+
+    );
   }
 }

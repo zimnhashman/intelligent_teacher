@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:intelligent_teacher/GetXController.dart';
+import 'package:intelligent_teacher/utils/GetXController.dart';
 import 'package:intelligent_teacher/userLearner/categoryPage.dart';
 import 'adminTeacher/adminDashboardHome.dart';
 

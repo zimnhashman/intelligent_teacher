@@ -41,7 +41,7 @@ class Categories extends StatelessWidget {
               ),
 
               GestureDetector(
-                onTap: () => Get.to(QuestionAnswer()) ,
+                onTap: () => Get.to(ICTQuestionAnswer()) ,
                 child: Column(
                   children: [
                     Image.asset('asset/images/userLearner.ict.jpg',),

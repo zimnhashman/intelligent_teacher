@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:intelligent_teacher/userLearner/ict/ictQuestionAndAnswer.dart';
 
+import 'maths/mathsQuestions.dart';
+
 
 class Categories extends StatelessWidget {
 
@@ -32,7 +34,7 @@ class Categories extends StatelessWidget {
           ),
 
           GestureDetector(
-            onTap: () => Get.to(QuestionAnswer()) ,
+            onTap: () => Get.to(ICTQuestionAnswer()) ,
             child: Column(
               children: [
                 Image.asset('asset/images/userLearner.ict.jpg',),
@@ -40,13 +42,26 @@ class Categories extends StatelessWidget {
                     fontSize: 20.0
                 ),),
 
+              ],
+            ),
+          ),
+
+          GestureDetector(
+            onTap: () => Get.to(MathsQuestionAnswer()) ,
+            child: Column(
+              children: [
+                Image.asset('asset/images/userLearner.ict.jpg',),
+                Text('Mathematics', style: TextStyle(
+                    fontSize: 20.0
+                ),),
 
               ],
             ),
           ),
 
 
-    ],
+
+        ],
       ),
     );
   }

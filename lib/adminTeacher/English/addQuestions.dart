@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:intelligent_teacher/adminTeacher/English/addComprehension3.dart';
 import 'package:intelligent_teacher/adminTeacher/adminDrawer.dart';
 
-import '../addComprehension4.dart';
+import 'addComprehension4.dart';
 
 
 class AdminEnglishAdd extends StatefulWidget {
