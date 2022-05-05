@@ -29,7 +29,6 @@ class _UserEnglishSelectorState extends State<UserEnglishSelector> {
 
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               GestureDetector(
                 onTap: () => Get.to(EnglishQuestionAnswerOne()),
@@ -81,7 +80,6 @@ class _UserEnglishSelectorState extends State<UserEnglishSelector> {
 
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Container(
                 child: Text('1', style: TextStyle(

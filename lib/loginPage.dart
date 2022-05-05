@@ -127,40 +127,7 @@ class _LoginPageState extends State<LoginPage> {
                     Row(
                       children: [
                         const SizedBox(width: 20),
-                        InkWell(
-                          onTap: () {
-                            // ignore: unrelated_type_equality_checks
-                            if ( _usernameController == 'admin') {
-                                  Get.to(AdminDashboard());
-                            // ignore: unrelated_type_equality_checks
-                            } else if (_passwordController == 'test') {
-                              Get.to(Categories(), arguments: []);
-                            }
-                          },
-                          child: Container(
-                            height: 50,
-                            width: 170,
-                            decoration: BoxDecoration(
-                              gradient: const LinearGradient(
-                                  colors: [
-                                    Colors.lightBlueAccent,
-                                    Colors.blueAccent
-                                  ],
-                                  begin: Alignment.topLeft,
-                                  end: Alignment.bottomRight),
-                              borderRadius: BorderRadius.circular(25),
-                            ),
-                            child: const Center(
-                              child: Text(
-                                'LOGIN',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
+                        ElevatedButton(child: Text('LOGIN'), onPressed: () => Get.to(Categories()),)
                       ],
                     )
                   ],
