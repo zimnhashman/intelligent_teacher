@@ -40,7 +40,6 @@ class _AddAdditionState extends State<AddAddition> {
                       ),
                       hintText: 'Value 1',
                       hintStyle: TextStyle(color: Colors.grey),
-
                     ),),
                 ),
                 SizedBox(width: 20.0),
