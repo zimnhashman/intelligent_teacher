@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:intelligent_teacher/userLearner/english/englishCategory.dart';
 import 'englishComprehensionOne.dart';
@@ -14,8 +15,6 @@ final String question4Answer;
 final String question5Answer;
 final String question6Answer;
 final int mark;
-
-
 
   @override
   _EnglishQuestionAnswerOneResultState createState() => _EnglishQuestionAnswerOneResultState();
@@ -38,6 +37,7 @@ class _EnglishQuestionAnswerOneResultState extends State<EnglishQuestionAnswerOn
         Text(' ${widget.mark}/6', style: TextStyle(fontSize: 30.0, ),),
           SizedBox(height: 20.0,),
           ElevatedButton(onPressed: () {
+            SystemSound.play(SystemSoundType.alert);
             (widget.mark >= 5) ? Get.to(EnglishComprehensionOneSuccess()) : Get.to(EnglishComprehensionOneFailer());
           },
           child: Text('Continue', ),)

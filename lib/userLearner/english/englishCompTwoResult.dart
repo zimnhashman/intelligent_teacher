@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:intelligent_teacher/userLearner/english/englishCategory.dart';
 
@@ -40,6 +41,7 @@ class _EnglishQuestionAnswerTwoResultState extends State<EnglishQuestionAnswerTw
           Text(' ${widget.mark}/6', style: TextStyle(fontSize: 30.0, ),),
           SizedBox(height: 20.0,),
           ElevatedButton(onPressed: () {
+            SystemSound.play(SystemSoundType.alert);
             (widget.mark >= 5) ? Get.to(EnglishComprehensionTwoSuccess()) : Get.to(EnglishComprehensionTwoFailer());
           },
             child: Text('Continue', ),)

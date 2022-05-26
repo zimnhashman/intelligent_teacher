@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:intelligent_teacher/userLearner/english/englishCompOneResult.dart';
+import 'package:flutter/services.dart';
 
 
 class EnglishQuestionAnswerOne extends StatefulWidget {
@@ -171,6 +172,7 @@ class _EnglishQuestionAnswerOneState extends State<EnglishQuestionAnswerOne> {
 
 
                       ElevatedButton(onPressed: () {
+                        SystemSound.play(SystemSoundType.click);
                         var _question1Answer = _question1Controller.text.toString();
                         var _question2Answer = _question2Controller.text.toString();
                         var _question3Answer= _question3Controller.text.toString();
@@ -222,6 +224,8 @@ class _EnglishQuestionAnswerOneState extends State<EnglishQuestionAnswerOne> {
                           question2Answer: _question2Answer, question3Answer: _question3Answer,
                           question4Answer: _question4Answer, question5Answer: _question5Answer,
                           question6Answer: _question6Answer, mark: _mark,));
+
+                        //Store Failed Questions
 
                       }, child: Text('SUBMIT'))
 

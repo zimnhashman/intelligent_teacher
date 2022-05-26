@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
 
 
-class Result extends StatefulWidget {
-  const Result({Key? key}) : super(key: key);
+class ICTResult extends StatefulWidget {
+  String questionAnswer;
+  int mark;
 
-  @override
-  _ResultState createState() => _ResultState();
+  ICTResult({required this.questionAnswer, required this.mark });
+  _ICTResultState createState() => _ICTResultState();
 }
 
-class _ResultState extends State<Result> {
+class _ICTResultState extends State<ICTResult> {
   @override
   Widget build(BuildContext context) {
-    var answer;
+
     return Scaffold(
       body: Column(
         children: <Widget>[
-          // if (answer == true) {
-          //      Text('Answer Is Correct'),
-          // }
-
+         Center(
+           child: Text('Your Mark is ${widget.mark}'),
+         )
         ],
       ),
     );

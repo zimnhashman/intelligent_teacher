@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'package:get/get_navigation/get_navigation.dart';
+
+import 'ictResultPage.dart';
 
 
 class ICTQuestionAnswer extends StatefulWidget {
-
 
 
   @override
@@ -13,6 +16,8 @@ class ICTQuestionAnswer extends StatefulWidget {
 class _ICTQuestionAnswerState extends State<ICTQuestionAnswer> {
   @override
   Widget build(BuildContext context) {
+    TextEditingController _questionController = new TextEditingController();
+    int _mark = 0;
     return Scaffold(
       appBar: AppBar(
         title: Text('Chapter Quiz'),
@@ -31,21 +36,25 @@ class _ICTQuestionAnswerState extends State<ICTQuestionAnswer> {
                   labelText: "Put In the Correct Answer Here!",
                   labelStyle: TextStyle(color: Colors.blueGrey)
                 ),
-
-                validator: (value) {
-                  if (value!.contains("CPU")) {
-                    return "Answer Is correct";
-                  } else {
-                    return null;
-                  }
-                }),
+              ),
             ),
 
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 16.0),
               child: ElevatedButton(
-                onPressed: () {
 
+                onPressed: () {
+                  var _questionAnswer = _questionController.text.toString().toUpperCase();
+
+                  //Logic to add marks if answer is correct
+                  if (_questionAnswer.contains('CPU')) {setState(() {
+                    _mark++;
+                  });} else {
+                    _mark = _mark;
+                  }
+                  SystemSound.play(SystemSoundType.click);
+                  Get.to(ICTResult(questionAnswer: _questionAnswer, mark: _mark,),
+                    );
 
                 }, child: Text(
                 'SUBMIT'

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:intelligent_teacher/userLearner/english/englishCompTwoResult.dart';
 
@@ -173,6 +174,7 @@ class _EnglishQuestionAnswerThreeState extends State<EnglishQuestionAnswerThree>
                     ),
 
                     ElevatedButton(onPressed: () {
+                      SystemSound.play(SystemSoundType.click);
                       var _question1Answer = _question1Controller.text.toString().toUpperCase();
                       var _question2Answer = _question2Controller.text.toString().toUpperCase();
                       var _question3Answer= _question3Controller.text.toString().toUpperCase();

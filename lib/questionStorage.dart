@@ -12,7 +12,7 @@ class QuestionStorage {
   static readQuestion3() async {
     final prefs = await SharedPreferences.getInstance();
     final key = 'question_3';
-    final value = prefs.get(key) ?? 0;
+    final value = prefs.get(key) ?? null;
     print('read : $value');
   }
 
@@ -26,7 +26,7 @@ class QuestionStorage {
   static readQuestion4() async {
     final prefs = await SharedPreferences.getInstance();
     final key = 'question_4';
-    final value = prefs.get(key) ?? 0;
+    final value = prefs.get(key) ?? null;
     print('read : $value');
   }
 }
