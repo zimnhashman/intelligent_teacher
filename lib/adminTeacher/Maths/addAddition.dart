@@ -67,7 +67,9 @@ class _AddAdditionState extends State<AddAddition> {
               ],
             ),
             ElevatedButton(
-              onPressed: Get.to(),
+              onPressed: () {
+                Get.to(AddAdditionSuccess(value2: _value2Controller.text, value1: _value1Controller.text,));
+              },
               child: Text('SUBMIT'),
             )
 
@@ -77,3 +79,38 @@ class _AddAdditionState extends State<AddAddition> {
     );
   }
 }
+
+class AddAdditionSuccess extends StatefulWidget {
+  String value2;
+  String value1;
+  AddAdditionSuccess({required this.value2, required this.value1});
+
+  @override
+  State<AddAdditionSuccess> createState() => _AddAdditionSuccessState();
+}
+
+class _AddAdditionSuccessState extends State<AddAdditionSuccess> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Question Added Successfully'),
+      ),
+      body: Column(
+        children: [
+          Text('Question'),
+          Row(
+            children: [
+              Text('${int.parse(widget.value1)}'),
+              Text('+'),
+              Text('${int.parse(widget.value2)}'),
+              Text('='),
+              Text('${int.parse(widget.value1)+int.parse(widget.value2)}')
+            ],
+          )
+        ],
+      ),
+    );
+  }
+}
+

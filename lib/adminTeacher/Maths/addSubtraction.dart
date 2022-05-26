@@ -67,12 +67,49 @@ class _AddSubtractionState extends State<AddSubtraction> {
             ],
           ),
           ElevatedButton(
-            onPressed: Get.to(),
+            onPressed: () {
+              Get.to(AddSubtractionSuccess(value2: _value2Controller.text, value1: _value1Controller.text));
+              //todo: Add question to shared prefernces via iteraion
+            },
             child: Text('SUBMIT'),
           )
 
 
         ]
+      ),
+    );
+  }
+}
+
+class AddSubtractionSuccess extends StatefulWidget {
+  String value2;
+  String value1;
+  AddSubtractionSuccess({required this.value2, required this.value1});
+
+  @override
+  State<AddSubtractionSuccess> createState() => _AddSubtractionSuccessState();
+}
+
+class _AddSubtractionSuccessState extends State<AddSubtractionSuccess> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Question Added Successfully'),
+      ),
+      body: Column(
+        children: [
+          Text('Question'),
+          Row(
+            children: [
+              Text('${int.parse(widget.value1)}'),
+              Text('-'),
+              Text('${int.parse(widget.value2)}'),
+              Text('='),
+              Text('${int.parse(widget.value1)-int.parse(widget.value2)}')
+            ],
+          )
+        ],
       ),
     );
   }
