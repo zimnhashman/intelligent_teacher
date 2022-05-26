@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
+import 'package:intelligent_teacher/questionStorage.dart';
 import 'englishComp3.dart';
 import 'englishComp4.dart';
 import 'englishComprehension2.dart';
@@ -13,9 +13,17 @@ class UserEnglishSelector extends StatefulWidget {
   _UserEnglishSelectorState createState() => _UserEnglishSelectorState();
 }
 
+Future init() async {
+
+  QuestionStorage.readQuestion3();
+  QuestionStorage.readQuestion4();
+}
+
+
 class _UserEnglishSelectorState extends State<UserEnglishSelector> {
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(title: Text('English Exercises'),),
       body: Column(
@@ -25,8 +33,7 @@ class _UserEnglishSelectorState extends State<UserEnglishSelector> {
             fontSize: 22.0,
           ),),
 
-          //Widget If Comprehensions are not available in Global State and App is in initial State
-
+          QuestionStorage.readQuestion3() || QuestionStorage.readQuestion4() == 'true' ?
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
@@ -73,8 +80,8 @@ class _UserEnglishSelectorState extends State<UserEnglishSelector> {
               ),
 
             ],
-          ),
-
+          )
+              :
 
           //Widget If Comprehensions are available in Global State
 

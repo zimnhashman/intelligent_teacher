@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:intelligent_teacher/utils/GetXController.dart';
 import 'package:intelligent_teacher/userLearner/categoryPage.dart';
 import 'adminTeacher/adminDashboardHome.dart';
+import 'adminTeacher/adminSubjectCategory.dart';
 
 class LoginPage extends StatefulWidget {
 
@@ -127,7 +128,13 @@ class _LoginPageState extends State<LoginPage> {
                     Row(
                       children: [
                         const SizedBox(width: 20),
-                        ElevatedButton(child: Text('LOGIN'), onPressed: () => Get.to(Categories()),)
+                        ElevatedButton(child: Text('LOGIN'), onPressed: () {
+                          if (_usernameController.text.contains('user')) {
+                            Get.to(UserCategories());
+                          } else if (_usernameController.text.contains('admin')){
+                            Get.to(AdminCategories());
+                          }
+                        },)
                       ],
                     )
                   ],

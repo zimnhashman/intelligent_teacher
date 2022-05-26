@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/get_navigation.dart';
+import 'package:intelligent_teacher/adminTeacher/English/adminEnglish.dart';
 import 'package:intelligent_teacher/userLearner/ict/ictQuestionAndAnswer.dart';
 
+import 'Maths/adminMaths.dart';
 
-class Categories extends StatelessWidget {
+
+class AdminCategories extends StatelessWidget {
 
 
   @override
@@ -19,7 +22,7 @@ class Categories extends StatelessWidget {
           Row(
             children: [
               GestureDetector(
-                //onTap: () => Get.to(),
+                onTap: () => Get.to(AdminEnglish()),
                 child: Column(
                   children: [
                     Image.asset('asset/images/userLearner.english.jpg'),
@@ -30,14 +33,17 @@ class Categories extends StatelessWidget {
                 ),
               ),
 
-              Column(
-                children: [
-                  Image.asset('asset/images/mathematics.png'),
-                  Text('Mathematics', style: TextStyle(
-                      fontSize: 20.0
-                  ),),
+              GestureDetector(
+                onTap: () => Get.to(AdminMaths()),
+                child: Column(
+                  children: [
+                    Image.asset('asset/images/mathematics.png'),
+                    Text('Mathematics', style: TextStyle(
+                        fontSize: 20.0
+                    ),),
 
-                ],
+                  ],
+                ),
               ),
 
               GestureDetector(

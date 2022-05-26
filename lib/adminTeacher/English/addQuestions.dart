@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intelligent_teacher/adminTeacher/English/addComprehension3.dart';
 import 'package:intelligent_teacher/adminTeacher/adminDrawer.dart';
-
+import 'package:intelligent_teacher/questionStorage.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'addComprehension4.dart';
 
 
@@ -85,6 +86,9 @@ class EnglishQuestions extends StatefulWidget {
 class _EnglishQuestionsState extends State<EnglishQuestions> {
   @override
   Widget build(BuildContext context) {
+    String question3;
+    String question4;
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Add Question Type'),
@@ -108,10 +112,14 @@ class _EnglishQuestionsState extends State<EnglishQuestions> {
               children: [
                 ElevatedButton(onPressed: () => {
                   if (widget.comprehensionTitle.contains('Chiedza')) {
+                    question3 = 'true',
+                    QuestionStorage.saveQuestion3(question3),
                     Get.to(AddComprehension3())
-                    //todo: add shared preferences logic to add value to permanent state
+
                   } else if (widget.comprehensionTitle.contains('Vimbai')) {
-                    Get.to(AddComprehension4())
+                     question4 = 'true',
+                     QuestionStorage.saveQuestion4(question4),
+                     Get.to(AddComprehension4())
                   } else {
                     Get.to(AdminEnglishAdd())
                   }
@@ -122,12 +130,17 @@ class _EnglishQuestionsState extends State<EnglishQuestions> {
 
 
                 ElevatedButton(onPressed: () => {
-                  Get.to(AddComprehension4())
+                  question4 = 'true',
+                  QuestionStorage.saveQuestion4(question4),
+                  Get.to(AddComprehension4()),
+
                 }, child: Text('Multiple Choice')),
 
                 SizedBox(width: 20.0,),
 
                 ElevatedButton(onPressed: () => {
+                  question3 = 'true',
+                QuestionStorage.saveQuestion3(question3),
                   Get.to(AddComprehension3())
                 }, child: Text('Yes Or No')),
 
@@ -140,6 +153,3 @@ class _EnglishQuestionsState extends State<EnglishQuestions> {
   }
 }
 
-class ModelLogic {
-
-}
