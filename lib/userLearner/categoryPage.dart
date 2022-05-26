@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/get_navigation.dart';
+import 'package:intelligent_teacher/userLearner/english/englishCategory.dart';
 import 'package:intelligent_teacher/userLearner/ict/ictQuestionAndAnswer.dart';
 
 import 'maths/mathsQuestions.dart';
@@ -14,13 +16,18 @@ class Categories extends StatelessWidget {
     return Container(
       child: Row(
         children: [
-          Column(
-            children: [
-              Image.asset('asset/images/userLearner.english.jpg'),
-              Text('English', style: TextStyle(
-                fontSize: 20.0
-              ),),
-            ],
+          GestureDetector(
+            onTap: () => Get.to(
+              UserEnglishSelector()
+            ),
+            child: Column(
+              children: [
+                Image.asset('asset/images/english.jpg'),
+                Text('English', style: TextStyle(
+                  fontSize: 20.0
+                ),),
+              ],
+            ),
           ),
 
           Column(
@@ -37,7 +44,7 @@ class Categories extends StatelessWidget {
             onTap: () => Get.to(ICTQuestionAnswer()) ,
             child: Column(
               children: [
-                Image.asset('asset/images/userLearner.ict.jpg',),
+                Image.asset('asset/images/ict.jpg',),
                 Text('ICT', style: TextStyle(
                     fontSize: 20.0
                 ),),
@@ -46,11 +53,13 @@ class Categories extends StatelessWidget {
             ),
           ),
 
+          SizedBox(width: 20.0,),
+
           GestureDetector(
             onTap: () => Get.to(MathsQuestionAnswer()) ,
             child: Column(
               children: [
-                Image.asset('asset/images/userLearner.ict.jpg',),
+                Image.asset('asset/images/ict.jpg',),
                 Text('Mathematics', style: TextStyle(
                     fontSize: 20.0
                 ),),
