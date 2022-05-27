@@ -3,7 +3,10 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:intelligent_teacher/userLearner/english/englishCategory.dart';
 
+import '../../questionStorage.dart';
 import 'englishComp3.dart';
+import 'englishCompOneResult.dart';
+import 'englishContentPage.dart';
 
 
 class EnglishQuestionAnswerThreeResult extends StatefulWidget {
@@ -99,6 +102,7 @@ class EnglishComprehensionThreeFailer extends StatefulWidget {
 class _EnglishComprehensionThreeFailerState extends State<EnglishComprehensionThreeFailer> {
   @override
   Widget build(BuildContext context) {
+    var _counter;
     return Scaffold(
       appBar: AppBar(title: Text('Please Try Again'),),
       body: Column(
@@ -106,7 +110,42 @@ class _EnglishComprehensionThreeFailerState extends State<EnglishComprehensionTh
           Text('You Tried Your Best!'),
           SizedBox(height: 15.0,),
           Text('Please Try the Exercise Again'),
-          ElevatedButton(onPressed: () => Get.to(EnglishQuestionAnswerThree()), child: Text('Try Again'))
+          ElevatedButton(onPressed: () {
+            _counter = int.parse( QuestionStorage.readQuestion3Counter()) + _counter + 1;
+            _counter <= 3 ? Get.to(EnglishQuestionAnswerThree()) : Get.to(EnglishComprehensionLimiter3());
+            QuestionStorage.saveQuestion3Counter(_counter);
+          },
+              child: Text('Try Again'))
+
+        ],
+      ),
+
+    );
+  }
+}
+
+class EnglishComprehensionLimiter3 extends StatefulWidget {
+
+  @override
+  _EnglishComprehensionLimiter3State createState() => _EnglishComprehensionLimiter3State();
+}
+
+class _EnglishComprehensionLimiter3State extends State<EnglishComprehensionLimiter3> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(),
+      body:Column(
+        children: <Widget>[
+          Text('Unfortunately You Cant Try the Exercise Again'),
+          SizedBox(height: 15.0,),
+          Text('Go back to Lessons Page to learn more'),
+          ElevatedButton(onPressed: () {
+            var _counter;
+            QuestionStorage.readQuestion3Counter();
+            _counter <= 3 ? Get.to(EnglishQuestionAnswerThree()) : Get.to(EnglishContent());
+          },
+            child: Text('Try Again'),)
 
         ],
       ),

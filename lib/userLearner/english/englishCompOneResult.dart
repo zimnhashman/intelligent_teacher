@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:intelligent_teacher/questionStorage.dart';
 import 'package:intelligent_teacher/userLearner/english/englishCategory.dart';
 import 'englishComprehensionOne.dart';
+import 'englishContentPage.dart';
 
 class EnglishQuestionAnswerOneResult extends StatefulWidget {
 EnglishQuestionAnswerOneResult({required this.question1Answer, required this.question2Answer,
@@ -81,8 +83,6 @@ class _EnglishComprehensionOneSuccessState extends State<EnglishComprehensionOne
 }
 
 
-
-
 class EnglishComprehensionOneFailer extends StatefulWidget {
   const EnglishComprehensionOneFailer({Key? key}) : super(key: key);
 
@@ -93,6 +93,7 @@ class EnglishComprehensionOneFailer extends StatefulWidget {
 class _EnglishComprehensionOneFailerState extends State<EnglishComprehensionOneFailer> {
   @override
   Widget build(BuildContext context) {
+    var _counter;
     return Scaffold(
       appBar: AppBar(),
       body:Column(
@@ -100,7 +101,43 @@ class _EnglishComprehensionOneFailerState extends State<EnglishComprehensionOneF
           Text('You Tried Your Best!'),
           SizedBox(height: 15.0,),
           Text('Please Try the Exercise Again'),
-          ElevatedButton(onPressed: () => Get.to(EnglishQuestionAnswerOne()), child: Text('Try Again'))
+          ElevatedButton(onPressed: () {
+            _counter = int.parse( QuestionStorage.readQuestion1Counter()) + _counter + 1;
+            _counter <= 3 ? Get.to(EnglishQuestionAnswerOne()) : Get.to(EnglishComprehensionLimiter());
+            QuestionStorage.saveQuestion1Counter(_counter);
+            },
+            child: Text('Try Again'),)
+
+        ],
+      ),
+
+    );
+  }
+}
+
+
+class EnglishComprehensionLimiter extends StatefulWidget {
+
+  @override
+  _EnglishComprehensionLimiterState createState() => _EnglishComprehensionLimiterState();
+}
+
+class _EnglishComprehensionLimiterState extends State<EnglishComprehensionLimiter> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(),
+      body:Column(
+        children: <Widget>[
+          Text('Unfortunately You Cant Try the Exercise Again'),
+          SizedBox(height: 15.0,),
+          Text('Go back to Lessons Page to learn more'),
+          ElevatedButton(onPressed: () {
+            var _counter;
+            QuestionStorage.readQuestion1Counter();
+            _counter <= 3 ? Get.to(EnglishQuestionAnswerOne()) : Get.to(EnglishContent());
+          },
+            child: Text('Try Again'),)
 
         ],
       ),
