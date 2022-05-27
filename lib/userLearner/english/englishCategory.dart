@@ -43,11 +43,7 @@ class _UserEnglishSelectorState extends State<UserEnglishSelector> {
         ),
       ),
       appBar: AppBar(title: Text('English Exercises'),),
-      body: FutureBuilder<dynamic>(
-        future: QuestionStorage.readQuestion3(),
-        builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
-          if (snapshot.hasData == true) {
-            return Column(
+      body: Column(
               children: [
                 SizedBox(height: 20.0,),
                 Text('Select The Exercise You Want to Attempt', style: TextStyle(
@@ -129,59 +125,8 @@ class _UserEnglishSelectorState extends State<UserEnglishSelector> {
                   ],
                 ),
               ],
-            );
-          } else {
-            return Column(
-              children: [
-                SizedBox(height: 20.0,),
-                Text('Select The Exercise You Want to Attempt', style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 22.0,
-                ),),
-                SizedBox(height: 30.0,),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    GestureDetector(
-                      onTap: () {
-                        SystemSound.play(SystemSoundType.click);
-                        Get.to(EnglishQuestionAnswerOne());
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(
-                            border: Border.all(color: Colors.blueAccent)
-                        ),
-                        child: Text('1', style: TextStyle(
-                          fontSize: 46.0,
-                        ),),
-                      ),
-                    ),
-
-                    SizedBox(width: 20.0,),
-
-                    GestureDetector(
-                      onTap: () {
-                        SystemSound.play(SystemSoundType.click);
-                        Get.to(EnglishQuestionAnswerTwo());
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(
-                            border: Border.all(color: Colors.yellowAccent)
-                        ),
-                        child: Text('2', style: TextStyle(
-                            fontSize: 46.0
-                        ),),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            );
+            ));
           }
-        },
-      )
 
-    );
   }
-}
+

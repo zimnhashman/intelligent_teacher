@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:get/get.dart';
+import 'package:intelligent_teacher/registrationPage.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:webview_flutter_web/webview_flutter_web.dart';
-
-import 'loginPage.dart';
-
 
 
 
@@ -25,7 +23,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: LoginPage(),
+      home: RegisterPage(),
     );
   }
 }

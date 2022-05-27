@@ -131,8 +131,18 @@ class _LoginPageState extends State<LoginPage> {
                             Get.to(UserCategories());
                           } else if (_usernameController.text.contains('admin')){
                             Get.to(AdminCategories());
+                          } else if (_usernameController.text.contains('takudzwa')) {
+                            Get.to(UserCategories());
+                          } else if (_usernameController.text.contains('pamela')) {
+                            Get.to(UserCategories());
                           }
-                        },)
+                        },),
+                        SizedBox(width: 20.0),
+                        Text('Dont have an Account?'),
+                        Text('Register Here', style: TextStyle(
+                            decoration: TextDecoration.underline,
+                            color: Colors.blue[900]
+                        ),),
                       ],
                     )
                   ],
