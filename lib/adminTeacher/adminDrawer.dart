@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../loginPage.dart';
+import 'names.dart';
 
 class AppDrawer extends StatelessWidget {
 
@@ -21,8 +22,11 @@ class AppDrawer extends StatelessWidget {
           ListTile(
             title: Text('View Questions'), trailing: Icon(Icons.view_list_sharp),
           ),
-          ListTile(
-            title: Text('View Students'), trailing: Icon(Icons.list_outlined),
+          GestureDetector(
+            onTap: () => Get.to(Names()),
+            child: ListTile(
+              title: Text('View Students'), trailing: Icon(Icons.list_outlined),
+            ),
           ),
 
           GestureDetector(
