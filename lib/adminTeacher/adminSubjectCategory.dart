@@ -37,7 +37,7 @@ class AdminCategories extends StatelessWidget {
                 onTap: () => Get.to(AdminMaths()),
                 child: Column(
                   children: [
-                    Image.asset('asset/images/mathematics.jpg'),
+                    Image.asset('asset/images/maths.jpg'),
                     Text('Mathematics', style: TextStyle(
                         fontSize: 20.0
                     ),),
