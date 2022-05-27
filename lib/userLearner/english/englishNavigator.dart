@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:intelligent_teacher/userLearner/english/englishCategory.dart';
+import '../../loginPage.dart';
 import 'englishContentPage.dart';
 
 class EnglishNavigator extends StatefulWidget {
@@ -15,6 +16,23 @@ class _EnglishNavigatorState extends State<EnglishNavigator> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        drawer: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: [
+              DrawerHeader(child: Text('Menu')),
+
+              GestureDetector(
+                onTap: () {
+                  Get.to(LoginPage());
+                },
+                child: ListTile(
+                  title: Text('Logout'), trailing: Icon(Icons.logout),
+                ),
+              ),
+            ],
+          ),
+        ),
         appBar: AppBar(title: Text('English Exercises'),),
         body:  Column(
                 children: [

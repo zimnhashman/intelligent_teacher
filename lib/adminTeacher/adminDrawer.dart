@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../loginPage.dart';
 
 class AppDrawer extends StatelessWidget {
-
 
   @override
   Widget build(BuildContext context) {
@@ -23,8 +25,13 @@ class AppDrawer extends StatelessWidget {
             title: Text('View Students'), trailing: Icon(Icons.list_outlined),
           ),
 
-          ListTile(
-            title: Text('Logout'), trailing: Icon(Icons.logout),
+          GestureDetector(
+            onTap: () {
+              Get.to(LoginPage());
+            },
+            child: ListTile(
+              title: Text('Logout'), trailing: Icon(Icons.logout),
+            ),
           ),
         ],
       ),

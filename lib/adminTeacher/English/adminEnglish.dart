@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:intelligent_teacher/adminTeacher/adminDrawer.dart';
 import 'package:intelligent_teacher/adminTeacher/English/addQuestions.dart';
 
-class AdminEnglish extends StatelessWidget {
+class  AdminEnglish extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {

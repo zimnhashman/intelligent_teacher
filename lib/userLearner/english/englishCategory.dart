@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:intelligent_teacher/questionStorage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../../loginPage.dart';
 import 'englishComp3.dart';
 import 'englishComp4.dart';
 import 'englishComprehension2.dart';
@@ -25,6 +26,23 @@ class _UserEnglishSelectorState extends State<UserEnglishSelector> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            DrawerHeader(child: Text('Menu')),
+
+            GestureDetector(
+              onTap: () {
+                Get.to(LoginPage());
+              },
+              child: ListTile(
+                title: Text('Logout'), trailing: Icon(Icons.logout),
+              ),
+            ),
+          ],
+        ),
+      ),
       appBar: AppBar(title: Text('English Exercises'),),
       body: FutureBuilder<dynamic>(
         future: QuestionStorage.readQuestion3(),
