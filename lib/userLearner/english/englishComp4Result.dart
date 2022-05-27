@@ -113,12 +113,14 @@ class _EnglishComprehensionFourFailerState extends State<EnglishComprehensionFou
           Text('You Tried Your Best!'),
           SizedBox(height: 15.0,),
           Text('Please Try the Exercise Again'),
+          SizedBox(height: 20.0,),
           ElevatedButton(onPressed: () {
-            _counter = int.parse( QuestionStorage.readQuestion4Counter()) + _counter + 1;
-            if (_counter >= 3) {
-              Get.to(EnglishComprehensionLimiter());
-            } else Get.to(EnglishQuestionAnswerFour());
-            QuestionStorage.saveQuestion4Counter(_counter);
+            // _counter = int.parse( QuestionStorage.readQuestion4Counter()) + _counter + 1;
+            // if (_counter >= 3) {
+            //   Get.to(EnglishComprehensionLimiter());
+            // } else
+              Get.to(EnglishQuestionAnswerFour());
+           // QuestionStorage.saveQuestion4Counter(_counter);
     },
             child: Text('Try Again'))
 

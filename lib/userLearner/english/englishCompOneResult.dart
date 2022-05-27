@@ -105,11 +105,12 @@ class _EnglishComprehensionOneFailerState extends State<EnglishComprehensionOneF
           Text('Please Try the Exercise Again'),
           SizedBox(height: 15.0,),
           ElevatedButton(onPressed: () {
-            _counter = int.parse( QuestionStorage.readQuestion1Counter()) + _counter + 1;
-            QuestionStorage.saveQuestion1Counter(_counter);
-            if (_counter >= 3) {
-              Get.to(EnglishComprehensionLimiter());
-            } else Get.to(EnglishQuestionAnswerOne());
+            // _counter = int.parse( QuestionStorage.readQuestion1Counter()) + _counter + 1;
+            // QuestionStorage.saveQuestion1Counter(_counter);
+            // if (_counter >= 3) {
+            //   Get.to(EnglishComprehensionLimiter());
+            // } else
+            Get.to(EnglishQuestionAnswerOne());
     },
             child: Text('Try Again'),)
 
