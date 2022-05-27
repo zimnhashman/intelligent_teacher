@@ -25,7 +25,7 @@ class AdminCategories extends StatelessWidget {
                 onTap: () => Get.to(AdminEnglish()),
                 child: Column(
                   children: [
-                    Image.asset('asset/images/userLearner.english.jpg'),
+                    Image.asset('asset/images/english.jpg'),
                     Text('English', style: TextStyle(
                         fontSize: 20.0
                     ),),
@@ -37,7 +37,7 @@ class AdminCategories extends StatelessWidget {
                 onTap: () => Get.to(AdminMaths()),
                 child: Column(
                   children: [
-                    Image.asset('asset/images/mathematics.png'),
+                    Image.asset('asset/images/mathematics.jpg'),
                     Text('Mathematics', style: TextStyle(
                         fontSize: 20.0
                     ),),
@@ -50,7 +50,7 @@ class AdminCategories extends StatelessWidget {
                 onTap: () => Get.to(ICTQuestionAnswer()) ,
                 child: Column(
                   children: [
-                    Image.asset('asset/images/userLearner.ict.jpg',),
+                    Image.asset('asset/images/ict.jpg',),
                     Text('ICT', style: TextStyle(
                         fontSize: 20.0
                     ),),
