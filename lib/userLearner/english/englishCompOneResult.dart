@@ -97,15 +97,20 @@ class _EnglishComprehensionOneFailerState extends State<EnglishComprehensionOneF
     return Scaffold(
       appBar: AppBar(),
       body:Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Text('You Tried Your Best!'),
           SizedBox(height: 15.0,),
           Text('Please Try the Exercise Again'),
+          SizedBox(height: 15.0,),
           ElevatedButton(onPressed: () {
             _counter = int.parse( QuestionStorage.readQuestion1Counter()) + _counter + 1;
-            _counter <= 3 ? Get.to(EnglishQuestionAnswerOne()) : Get.to(EnglishComprehensionLimiter());
             QuestionStorage.saveQuestion1Counter(_counter);
-            },
+            if (_counter >= 3) {
+              Get.to(EnglishComprehensionLimiter());
+            } else Get.to(EnglishQuestionAnswerOne());
+    },
             child: Text('Try Again'),)
 
         ],

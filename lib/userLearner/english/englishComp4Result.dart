@@ -5,6 +5,7 @@ import 'package:intelligent_teacher/userLearner/english/englishCategory.dart';
 
 import '../../questionStorage.dart';
 import 'englishComp4.dart';
+import 'englishCompOneResult.dart';
 import 'englishContentPage.dart';
 
 
@@ -106,15 +107,19 @@ class _EnglishComprehensionFourFailerState extends State<EnglishComprehensionFou
     return Scaffold(
       appBar: AppBar(title: Text('Please Try Again'),),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Text('You Tried Your Best!'),
           SizedBox(height: 15.0,),
           Text('Please Try the Exercise Again'),
           ElevatedButton(onPressed: () {
             _counter = int.parse( QuestionStorage.readQuestion4Counter()) + _counter + 1;
-            _counter <= 3 ? Get.to(EnglishQuestionAnswerFour()) : Get.to(EnglishComprehensionLimiter4());
+            if (_counter >= 3) {
+              Get.to(EnglishComprehensionLimiter());
+            } else Get.to(EnglishQuestionAnswerFour());
             QuestionStorage.saveQuestion4Counter(_counter);
-            Get.to(EnglishQuestionAnswerFour()); },
+    },
             child: Text('Try Again'))
 
         ],
@@ -140,6 +145,7 @@ class _EnglishComprehensionLimiter4State extends State<EnglishComprehensionLimit
           Text('Unfortunately You Cant Try the Exercise Again'),
           SizedBox(height: 15.0,),
           Text('Go back to Lessons Page to learn more'),
+          SizedBox(height: 15.0,),
           ElevatedButton(onPressed: () {
             var _counter;
             QuestionStorage.readQuestion4Counter();

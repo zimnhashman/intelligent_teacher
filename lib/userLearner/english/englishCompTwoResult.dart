@@ -111,9 +111,10 @@ class _EnglishComprehensionTwoFailerState extends State<EnglishComprehensionTwoF
           ElevatedButton(onPressed: () {
       _counter = int.parse( QuestionStorage.readQuestion2Counter()) + _counter + 1;
       QuestionStorage.saveQuestion2Counter(_counter);
-      _counter <= 3 ? Get.to(EnglishQuestionAnswerTwo()) : Get.to(EnglishComprehensionLimiter2());
-    },
-            child: Text('Try Again'))
+      if (_counter >= 3) {
+        Get.to(EnglishComprehensionLimiter2());
+      } else Get.to(EnglishQuestionAnswerTwo());
+    }, child: Text('Try Again'))
 
         ],
       ),
@@ -134,10 +135,13 @@ class _EnglishComprehensionLimiter2State extends State<EnglishComprehensionLimit
     return Scaffold(
       appBar: AppBar(),
       body:Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Text('Unfortunately You Cant Try the Exercise Again'),
           SizedBox(height: 15.0,),
           Text('Go back to Lessons Page to learn more'),
+          SizedBox(height: 15.0,),
           ElevatedButton(onPressed: () {
             var _counter;
             QuestionStorage.readQuestion2Counter();
