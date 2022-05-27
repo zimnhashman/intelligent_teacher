@@ -10,34 +10,38 @@ class  AdminEnglish extends StatelessWidget {
     return Scaffold(
       drawer: AppDrawer(),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               GestureDetector(
                 onTap: () => Get.to(AdminEnglishAdd()),
                 child: Container(
                   child: Column(
                     children: [
-                      Icon(Icons.queue, size: 30.0,),
+                      Icon(Icons.queue, size: 60.0,),
                       Text('Add Questions')
                     ],
                   ),
                 ),
               ),
-
+              SizedBox(width: 20.0,),
               Container(
                 child: Column(
                   children: [
-                    Icon(Icons.queue, size: 30.0,),
+                    Icon(Icons.queue, size: 60.0,),
                     Text('View Questions')
                   ],
                 ),
               ),
-
+              SizedBox(width: 20.0,),
               Container(
                 child: Column(
                   children: [
-                    Icon(Icons.queue, size: 30.0,),
+                    Icon(Icons.queue, size: 60.0,),
                     Text('Delete Questions')
                   ],
                 ),

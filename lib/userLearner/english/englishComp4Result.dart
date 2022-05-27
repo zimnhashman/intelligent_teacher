@@ -4,8 +4,7 @@ import 'package:get/get.dart';
 import 'package:intelligent_teacher/userLearner/english/englishCategory.dart';
 
 import 'englishComp4.dart';
-import 'englishCompOneResult.dart';
-import 'englishComprehensionOne.dart';
+
 
 class EnglishQuestionAnswerFourResult extends StatefulWidget {
   EnglishQuestionAnswerFourResult({required this.question1Answer, required this.question2Answer,

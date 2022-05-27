@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:intelligent_teacher/userLearner/english/englishCompTwoResult.dart';
+
 
 import 'englishComp3Result.dart';
 
