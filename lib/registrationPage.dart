@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intelligent_teacher/loginPage.dart';
-import 'package:intelligent_teacher/userLearner/categoryPage.dart';
+
 
 class RegisterPage extends StatefulWidget {
 
@@ -178,12 +178,16 @@ class _RegisterPageState extends State<RegisterPage> {
 
                       ],
                     ),
-                    Text('Already have Student Account?'),
+                    SizedBox(height: 20.0,),
+                    Text('Already have Student Account?', style: TextStyle(
+                      color: Colors.white,
+                    ),),
                     GestureDetector(
                       onTap: () => Get.to(LoginPage()),
                       child: Text('Click Here to Login!', style: TextStyle(
                           decoration: TextDecoration.underline,
-                          color: Colors.blue[900]
+                          color: Colors.blue[900],
+                          fontSize: 20.0,
                       ),),
                     ),
                   ],

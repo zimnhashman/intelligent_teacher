@@ -139,15 +139,20 @@ class _LoginPageState extends State<LoginPage> {
                           }
                         },),
                         SizedBox(width: 20.0),
-                        Text('Dont have an Account?'),
+
 
                       ],
                     ),
+                    SizedBox(height: 20.0,),
+                    Text('Dont have an Account?', style: TextStyle(
+                      color: Colors.white,
+                    ),),
                     GestureDetector(
                       onTap: () => Get.to(RegisterPage()),
                       child: Text('Register Here', style: TextStyle(
                           decoration: TextDecoration.underline,
-                          color: Colors.blue[900]
+                          color: Colors.blue[900],
+                          fontSize: 20.0
                       ),),
                     ),
                   ],
