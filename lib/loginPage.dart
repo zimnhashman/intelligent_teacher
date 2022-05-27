@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:intelligent_teacher/registrationPage.dart';
 import 'package:intelligent_teacher/userLearner/categoryPage.dart';
 import 'adminTeacher/adminSubjectCategory.dart';
 
@@ -139,10 +140,13 @@ class _LoginPageState extends State<LoginPage> {
                         },),
                         SizedBox(width: 20.0),
                         Text('Dont have an Account?'),
-                        Text('Register Here', style: TextStyle(
-                            decoration: TextDecoration.underline,
-                            color: Colors.blue[900]
-                        ),),
+                        GestureDetector(
+                          onTap: () => Get.to(RegisterPage()),
+                          child: Text('Register Here', style: TextStyle(
+                              decoration: TextDecoration.underline,
+                              color: Colors.blue[900]
+                          ),),
+                        ),
                       ],
                     )
                   ],
