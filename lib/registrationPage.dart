@@ -174,17 +174,18 @@ class _RegisterPageState extends State<RegisterPage> {
 
                         },),
 
-                        Text('Already have Student Account?'),
-                        GestureDetector(
-                          onTap: () => Get.to(LoginPage()),
-                          child: Text('Click Here to Login!', style: TextStyle(
-                            decoration: TextDecoration.underline,
-                            color: Colors.blue[900]
-                          ),),
-                        )
+
 
                       ],
-                    )
+                    ),
+                    Text('Already have Student Account?'),
+                    GestureDetector(
+                      onTap: () => Get.to(LoginPage()),
+                      child: Text('Click Here to Login!', style: TextStyle(
+                          decoration: TextDecoration.underline,
+                          color: Colors.blue[900]
+                      ),),
+                    ),
                   ],
                 ),
               ),
