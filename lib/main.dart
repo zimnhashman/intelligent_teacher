@@ -5,6 +5,8 @@ import 'package:intelligent_teacher/userLearner/english/englishContentPage.dart'
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:webview_flutter_web/webview_flutter_web.dart';
 
+import 'loginPage.dart';
+
 
 
 
@@ -24,9 +26,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home:
-          EnglishContent(),
-      //LoginPage(),
+      home: LoginPage(),
     );
   }
 }
