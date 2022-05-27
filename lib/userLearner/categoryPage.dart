@@ -5,6 +5,7 @@ import 'package:get/get_navigation/get_navigation.dart';
 import 'package:intelligent_teacher/userLearner/english/englishCategory.dart';
 import 'package:intelligent_teacher/userLearner/ict/ictQuestionAndAnswer.dart';
 
+import 'english/englishNavigator.dart';
 import 'maths/mathsQuestions.dart';
 
 
@@ -42,7 +43,7 @@ class UserCategories extends StatelessWidget {
                       width: 250,
                       child: GestureDetector(
                         onTap: () => Get.to(
-                          UserEnglishSelector()
+                          EnglishNavigator()
                         ),
                         child: Column(
                           children: [

@@ -31,6 +31,9 @@ dependencies:
   get_it:
   get: 4.6.1
   shared_preferences:
+  webview_flutter_web:
+  webview_flutter:
+
 
 dev_dependencies:
   flutter_test:

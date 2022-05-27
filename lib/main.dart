@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:get/get.dart';
-import 'package:intelligent_teacher/userLearner/categoryPage.dart';
-import 'package:intelligent_teacher/userLearner/english/englishComprehensionOne.dart';
-import 'package:intelligent_teacher/loginPage.dart';
-import 'package:intelligent_teacher/userLearner/ict/ictQuestionAndAnswer.dart';
-import 'adminTeacher/English/addQuestions.dart';
+import 'package:intelligent_teacher/userLearner/english/englishContentPage.dart';
+import 'package:webview_flutter/webview_flutter.dart';
+import 'package:webview_flutter_web/webview_flutter_web.dart';
+
+
+
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  WebView.platform = WebWebViewPlatform();
   runApp(MyApp());
 }
 
@@ -21,8 +24,9 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: LoginPage(
-      ),
+      home:
+          EnglishContent(),
+      //LoginPage(),
     );
   }
 }

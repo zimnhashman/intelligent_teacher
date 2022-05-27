@@ -32,11 +32,14 @@ class _UserEnglishSelectorState extends State<UserEnglishSelector> {
           if (snapshot.hasData == true) {
             return Column(
               children: [
+                SizedBox(height: 20.0,),
                 Text('Select The Exercise You Want to Attempt', style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 22.0,
                 ),),
+                SizedBox(height: 30.0,),
                 Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     GestureDetector(
@@ -45,8 +48,11 @@ class _UserEnglishSelectorState extends State<UserEnglishSelector> {
                         Get.to(EnglishQuestionAnswerOne());
                       },
                       child: Container(
+                        decoration: BoxDecoration(
+                            border: Border.all(color: Colors.purpleAccent)
+                        ),
                         child: Text('1', style: TextStyle(
-                          fontSize: 18.0,
+                          fontSize: 46.0,
                         ),),
                       ),
                     ),
@@ -59,8 +65,11 @@ class _UserEnglishSelectorState extends State<UserEnglishSelector> {
                         Get.to(EnglishQuestionAnswerTwo());
                       },
                       child: Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.blueAccent)
+                        ),
                         child: Text('2', style: TextStyle(
-                            fontSize: 18.0
+                            fontSize: 46.0
                         ),),
                       ),
                     ),
@@ -73,8 +82,11 @@ class _UserEnglishSelectorState extends State<UserEnglishSelector> {
                         SystemSound.play(SystemSoundType.click),
                         Get.to(EnglishQuestionAnswerThree())},
                       child: Container(
+                        decoration: BoxDecoration(
+                            border: Border.all(color: Colors.redAccent)
+                        ),
                         child: Text('3', style: TextStyle(
-                            fontSize: 18.0
+                            fontSize: 46.0
                         ),),
                       ),
                     ),
@@ -87,8 +99,12 @@ class _UserEnglishSelectorState extends State<UserEnglishSelector> {
                         Get.to(EnglishQuestionAnswerFour());
                       },
                       child: Container(
+                        decoration: BoxDecoration(
+                            border: Border.all(
+                                color: Colors.yellowAccent)
+                        ),
                         child: Text('4', style: TextStyle(
-                            fontSize: 18.0
+                            fontSize: 46.0
                         ),),
                       ),
                     ),
@@ -100,11 +116,14 @@ class _UserEnglishSelectorState extends State<UserEnglishSelector> {
           } else {
             return Column(
               children: [
+                SizedBox(height: 20.0,),
                 Text('Select The Exercise You Want to Attempt', style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 22.0,
                 ),),
+                SizedBox(height: 30.0,),
                 Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     GestureDetector(
@@ -113,8 +132,11 @@ class _UserEnglishSelectorState extends State<UserEnglishSelector> {
                         Get.to(EnglishQuestionAnswerOne());
                       },
                       child: Container(
+                        decoration: BoxDecoration(
+                            border: Border.all(color: Colors.blueAccent)
+                        ),
                         child: Text('1', style: TextStyle(
-                          fontSize: 18.0,
+                          fontSize: 46.0,
                         ),),
                       ),
                     ),
@@ -127,8 +149,11 @@ class _UserEnglishSelectorState extends State<UserEnglishSelector> {
                         Get.to(EnglishQuestionAnswerTwo());
                       },
                       child: Container(
+                        decoration: BoxDecoration(
+                            border: Border.all(color: Colors.yellowAccent)
+                        ),
                         child: Text('2', style: TextStyle(
-                            fontSize: 18.0
+                            fontSize: 46.0
                         ),),
                       ),
                     ),
