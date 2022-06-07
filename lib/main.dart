@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:get/get.dart';
-import 'package:intelligent_teacher/adminTeacher/English/UploadContent/uploadContent.dart';
 import 'package:intelligent_teacher/auth/registrationPage.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:webview_flutter_web/webview_flutter_web.dart';
 
-import 'adminTeacher/English/UploadContent/uploadEnglishPDF.dart';
+
 
 
 
@@ -26,7 +25,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: UploadEnglishPDF(),
+      home: RegisterPage(),
     );
   }
 }

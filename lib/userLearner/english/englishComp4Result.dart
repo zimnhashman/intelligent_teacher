@@ -5,7 +5,6 @@ import 'package:intelligent_teacher/userLearner/english/englishCategory.dart';
 
 import '../../databases/questionStorage.dart';
 import 'englishComp4.dart';
-import 'englishCompOneResult.dart';
 import 'englishVideoContentPage.dart';
 
 

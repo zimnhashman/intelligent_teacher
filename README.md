@@ -30,5 +30,8 @@ environment:
 Dart SDK 2.12.0 
 Flutter Version 3.00
 
-1. Download and Install Flutter from flutter.dev,
-2. Fork the project from github link
+1. Download Android Studio
+2. Download Flutter 3.0 and Dart SDk 2.12 from flutter.dev,
+3. Install Flutter SDK and Dart plug-in for Android Studio
+4. Clone the project from github link
+5. Then run the project
