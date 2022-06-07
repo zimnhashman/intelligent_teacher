@@ -24,3 +24,11 @@ password: admin
 Learner Account
 username: test
 password: test
+
+##How to SetUp
+environment:
+Dart SDK 2.12.0 
+Flutter Version 3.00
+
+1. Download and Install Flutter from flutter.dev,
+2. Fork the project from github link

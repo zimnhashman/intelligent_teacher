@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:intelligent_teacher/questionStorage.dart';
+import '../../databases/questionStorage.dart';
 import 'package:intelligent_teacher/userLearner/english/englishCategory.dart';
 import 'englishComprehensionOne.dart';
-import 'englishContentPage.dart';
+import 'englishVideoContentPage.dart';
 
 class EnglishQuestionAnswerOneResult extends StatefulWidget {
 EnglishQuestionAnswerOneResult({required this.question1Answer, required this.question2Answer,
@@ -141,7 +141,7 @@ class _EnglishComprehensionLimiterState extends State<EnglishComprehensionLimite
           ElevatedButton(onPressed: () {
             var _counter;
             QuestionStorage.readQuestion1Counter();
-            _counter <= 3 ? Get.to(EnglishQuestionAnswerOne()) : Get.to(EnglishContent());
+            _counter <= 3 ? Get.to(EnglishQuestionAnswerOne()) : Get.to(EnglishVideoContent());
           },
             child: Text('Try Again'),)
 

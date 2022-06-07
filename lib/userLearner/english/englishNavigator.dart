@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:intelligent_teacher/userLearner/english/englishCategory.dart';
-import '../../loginPage.dart';
-import 'englishContentPage.dart';
+import '../../auth/loginPage.dart';
+import 'englishVideoContentPage.dart';
 
 class EnglishNavigator extends StatefulWidget {
 
@@ -66,7 +66,7 @@ class _EnglishNavigatorState extends State<EnglishNavigator> {
                       GestureDetector(
                         onTap: () {
                           SystemSound.play(SystemSoundType.click);
-                          Get.to(EnglishContent());
+                          Get.to(EnglishVideoContent());
                         },
                         child: Container(
                           decoration: BoxDecoration(

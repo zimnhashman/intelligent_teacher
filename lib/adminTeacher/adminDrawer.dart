@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../loginPage.dart';
+import '../auth/loginPage.dart';
 import 'names.dart';
 
 class AppDrawer extends StatelessWidget {
